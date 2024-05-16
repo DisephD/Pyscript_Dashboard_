@@ -148,16 +148,18 @@ body {
 	color: var(--blue);
 }
 
-.sidebar .side-menu li a.logout {
-	color: var(--red);
-    margin-top: 40px;
-	padding-left: 19px;
-}
 
 .sidebar .side-menu li a .bx {
 	min-width: calc(60px  - ((4px + 6px) * 2));
 	display: flex;
 	justify-content: center;
+}
+
+#heatmap{
+	padding-top: 4px;
+	padding-right: 5px;
+	margin: -25px 6px 0px 0px;
+	transform: scale(0.95)
 }
 
 
