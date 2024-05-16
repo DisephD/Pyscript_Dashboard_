@@ -106,7 +106,7 @@ def bar_chart (filtered_df):
         xaxis = dict(title="", tickfont_size =13), bargap=0.3, 
     )
     fig.update_traces(width=0.5)
-    fig.add_hline(y=14000, line_width=3,  line_dash="dash", line_color="#008080")
+    fig.add_hline(y=14000, line_width=3,  line_dash="dash", line_color="#bbd9fe")
 
     plotly_to_json (fig, "bar_chart")
 
