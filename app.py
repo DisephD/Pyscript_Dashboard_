@@ -88,6 +88,7 @@ def line_chart (filtered_df):
                       yaxis=dict( title=None, titlefont_size=14, tickfont_size=11, tickfont_color= "#A9A9AB", ),
                       xaxis = dict(title=None, tickfont_size =11,  tickfont_color= "#A9A9AB"),
                       )
+    fig.add_hline(y=2000, line_width=1,  line_dash="dash", line_color="#bbd9fe")
     plotly_to_json (fig, "line_chart")
 
 
@@ -136,6 +137,32 @@ def table_chart (filtered_df):
     plotly_to_json (fig, "table")
 
 
+#create and format a heatmap with plotly express
+def heat_chart (filtered_df): 
+    filtered_df['time'] = pd.to_datetime(filtered_df['hour'], format='%H: %M')
+    time_bins = [0, 11, 18, 21, 24]
+    time_labels = ['Morning', 'Noon', 'Evening', 'Night']
+    filtered_df['time_of_day'] = pd.cut(filtered_df['time'].dt.hour, bins=time_bins, labels=time_labels, right=False)
+    filtered_df.drop("time", axis=1, inplace=True)
+
+    heatmap_data = filtered_df.groupby(['day_of_the_week', 'time_of_day'])["Water(ml)"].sum().reset_index()
+    custom_order = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat','Sun', ]
+    heatmap_data['day_of_the_week'] = pd.Categorical(heatmap_data['day_of_the_week'], categories=custom_order, ordered=True)
+    heatmap_data = heatmap_data.sort_values(by='day_of_the_week')
+
+    heatmap_pivot= heatmap_data.pivot_table(index="time_of_day", columns= "day_of_the_week", values= "Water(ml)", aggfunc="sum", fill_value= 0)
+
+    fig= px.imshow(heatmap_pivot, color_continuous_scale='Blues', height=300, width = 240)
+    fig.update_traces(showscale=False, coloraxis=None,colorscale= "Blues")
+
+    fig.update_layout(plot_bgcolor="rgb(254,254,254)", title='',margin=dict(t=10,l=0,b=80,r=20), 
+        xaxis_tickfont_size=14,
+        yaxis=dict( title=None, titlefont_size=14, tickfont_size=13),
+        xaxis = dict(title=None, tickfont_size =13, side="top", tickangle=90),
+    )
+    # fig.update_xaxes(side="top", ticka)
+    plotly_to_json (fig, "heatmap")
+
 
 
 #return all the different chart functions
@@ -147,7 +174,8 @@ def plot(selected_month):
    table = table_chart(filtered_df)
    circle = circle_chart(filtered_df)
    bar = bar_chart(filtered_df)
-   return all_stats, kpis, line, table, circle, bar
+   heatmap = heat_chart(filtered_df)
+   return all_stats, kpis, line, table, circle, bar, heatmap
 
 
 #create a dropdown event catcher
