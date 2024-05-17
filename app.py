@@ -160,7 +160,7 @@ def heat_chart (filtered_df):
         yaxis=dict( title=None, titlefont_size=14, tickfont_size=13),
         xaxis = dict(title=None, tickfont_size =13, side="top", tickangle=90),
     )
-    # fig.update_xaxes(side="top", ticka)
+    fig.update_xaxes(side="top", tickangle=90)
     plotly_to_json (fig, "heatmap")
 
 
