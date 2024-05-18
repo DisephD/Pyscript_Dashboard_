@@ -13,7 +13,7 @@ url = "https://raw.githubusercontent.com/DisephD/pyscript_tutorial/main/drink_wa
 data = pd.read_csv(open_url(url), parse_dates=["Date"])
 water_data = data.query("year == 2024")
 
-display(pyscript.__version__, target=dashboard)
+display(PyScript.__version__, target=dashboard)
 
 
 # Format a number to a string eg 8 to 'week 8'
