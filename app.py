@@ -4,7 +4,7 @@ import numpy as np
 import plotly.express as px
 import plotly.graph_objects as go
 from pyodide.http import open_url
-from pyscript import display
+from pyscript import display, Element
 import warnings
 warnings.filterwarnings("ignore")
 
@@ -12,6 +12,8 @@ url = "https://raw.githubusercontent.com/DisephD/pyscript_tutorial/main/drink_wa
 
 data = pd.read_csv(open_url(url), parse_dates=["Date"])
 water_data = data.query("year == 2024")
+
+display(Pyscript.__version__)
 
 
 # Format a number to a string eg 8 to 'week 8'
