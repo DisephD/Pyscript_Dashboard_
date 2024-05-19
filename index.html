@@ -6,17 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- pyscript css -->
-    <link rel="stylesheet" href="https://pyscript.net/releases/2024.1.1/pyscript.css"/>
+    <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
     <!-- pyscript js -->
-    <script type="module" src="https://pyscript.net/releases/2024.5.1/core.js"></script>
+    <script defer src="https://pyscript.net/latest/pyscript.js"></script>
     <!-- Plotly cdn -->
     <script src='https://cdn.plot.ly/plotly-latest.min.js'></script>
     <!-- My CSS -->
-    <link rel="stylesheet" href="styles.css">
-    <!--link to google material design font-->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
-    <!-- Boxicons -->
-    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+<link rel="stylesheet" href="styles.css">
+<!--link to google material design font-->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+<!-- Boxicons -->
+<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
 
     <title>Water Dashboard with PyScript</title>
 
@@ -104,17 +104,17 @@
                         </span>
                         <span class="text">
                             <p class="box-text">Total Intake</p>
-                            <h3 id="total_water" class="box-text"></h3> 
+                            <h3 id="total_water" class="box-text"></h3>
                         </span>
                     </li>
-                
+               
                     <li>
                         <span class="material-symbols-outlined">
                             water_full
                         </span>
                         <span class="text">
                             <p class="box-text">Max Intake</p>
-                            <h3 class="box-text" id="highest_water"></h3>     
+                            <h3 class="box-text" id="highest_water"></h3>    
                         </span>
                     </li>
 
@@ -165,14 +165,14 @@
                     <!--target card to be displayed for small screens -->
                     <div id="target_card">
                         <div id="target_daily" class="target_card">
-                            <h3 class="text">2000ml</h3>     
-                            <p class="text">Daily Goal</p>     
+                            <h3 class="text">2000ml</h3>    
+                            <p class="text">Daily Goal</p>    
                         </div>
                         <div id="target_weekly" class="target_card">
-                            <h3 class="text">14000ml</h3> 
+                            <h3 class="text">14000ml</h3>
                             <p class="text">Weekly Goal</p>      
                         </div>
-                    </div> 
+                    </div>
                 </div>
 
                 <!-- BAR CHART -->
@@ -184,7 +184,7 @@
                         <div class="category"></div>
                         <p>Weekly Target: 14000ml</p>
                     </div>
-                    
+                   
                     <!--bar chart -->
                     <div id="bar_graph" class="bar_graph">
                         <div id="bar_chart">
@@ -196,7 +196,7 @@
     </section>
    
     <py-script output="dashboard" src="./app.py">
-	</py-script>
+</py-script>
 
 </body>
 </html>
