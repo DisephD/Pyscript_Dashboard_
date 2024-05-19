@@ -5,7 +5,7 @@ import plotly.express as px
 import plotly.graph_objects as go
 from pyodide.http import open_url
 from pyscript import display
-from pydom import Element
+from pyweb import pydom
 import warnings
 warnings.filterwarnings("ignore")
 
