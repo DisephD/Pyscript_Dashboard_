@@ -27,7 +27,7 @@ def plotly_to_json (fig, target_id):
 
 
 def display_str(variable, target):
-    pydom[target].html =''
+    js.document.getElementById(target).innerHTML=''
     var = (f"{variable} ml")
     display (var, target = target)
 
