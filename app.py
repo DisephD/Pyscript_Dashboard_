@@ -26,7 +26,7 @@ def plotly_to_json (fig, target_id):
 
 
 def display_str(variable, target):
-    Element(target).element.innerHTML =''
+    js.document.getElementById(target).innerHTML =''
     var = (f"{variable} ml")
     display (var, target = target)
 
@@ -179,7 +179,7 @@ def plot(selected_month):
 
 
 #create a dropdown event catcher
-def selectChange():
+def dropdown_event():
     selected_month = js.document.getElementById("selected_month").value
     plot(selected_month)
 
