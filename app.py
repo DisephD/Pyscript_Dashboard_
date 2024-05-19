@@ -26,7 +26,7 @@ def plotly_to_json (fig, target_id):
 
 
 def display_str(variable, target):
-    Element(target).element.innerHTML =''
+    js.document.getElementById(target).innerHTML=''
     var = (f"{variable} ml")
     display (var, target = target)
 
@@ -39,9 +39,9 @@ def stats(filtered_df):
     avg_water = int(round((total_water/len(daily_total)),1))
     highest_water = int(daily_total["Water(ml)"].max())
 
-    display_str(total_water, "total_water")
-    display_str(avg_water, "avg_water")
-    display_str(highest_water, "highest_water")
+    display_str(total_water, "#total_water")
+    display_str(avg_water, "#avg_water")
+    display_str(highest_water, "#highest_water")
 
 
 #create total statistics for all the months 
@@ -52,9 +52,9 @@ def total_month_stats():
     all_avg = int(round((all_total/len(daily_total)),1))
     all_highest = int(daily_total["Water(ml)"].max())
 
-    display_str(all_total, target= "all_total")
-    display_str(all_avg, target = "all_avg")
-    display_str(all_highest, target = "all_highest")
+    display_str(all_total, target= "#all_total")
+    display_str(all_avg, target = "#all_avg")
+    display_str(all_highest, target = "#all_highest")
 
 
 def circle_chart (filtered_df):
