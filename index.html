@@ -8,7 +8,7 @@
     <!-- pyscript css -->
     <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
     <!-- pyscript js -->
-    <script defer src="https://pyscript.net/latest/pyscript.js"></script>
+    <script defer src="https://pyscript.net/releases/2024.5.2/core.js"></script>
     <!-- Plotly cdn -->
     <script src='https://cdn.plot.ly/plotly-latest.min.js'></script>
     <!-- My CSS -->
@@ -85,7 +85,7 @@
         <div class="title">
             <div class="filters">
                 <label for="filter">Filter by</label>
-                <select class="filter" id ="selected_month" py-change="selectChange()">
+                <select class="filter" id ="selected_month" py-change="dropdown_event">
                     <option value="January">January</option>
                     <option value="February">February</option>
                     <option value="March">March</option>
