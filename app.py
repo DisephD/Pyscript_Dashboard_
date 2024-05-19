@@ -4,7 +4,7 @@ import numpy as np
 import plotly.express as px
 import plotly.graph_objects as go
 from pyodide.http import open_url
-from pyscript import display, Element
+from pyscript import display
 import warnings
 warnings.filterwarnings("ignore")
 
@@ -12,8 +12,6 @@ url = "https://raw.githubusercontent.com/DisephD/pyscript_tutorial/main/drink_wa
 
 data = pd.read_csv(open_url(url), parse_dates=["Date"])
 water_data = data.query("year == 2024")
-
-# display(PyScript.__version__, target=dashboard)
 
 
 # Format a number to a string eg 8 to 'week 8'
@@ -186,4 +184,4 @@ def selectChange():
     plot(selected_month)
 
 
-plot("March")
+plot("January")
