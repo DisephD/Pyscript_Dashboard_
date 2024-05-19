@@ -5,7 +5,7 @@ import plotly.express as px
 import plotly.graph_objects as go
 from pyodide.http import open_url
 from pyscript import display
-from pyweb import pydom.Element
+from pyweb import pydom
 import warnings
 warnings.filterwarnings("ignore")
 
@@ -27,7 +27,7 @@ def plotly_to_json (fig, target_id):
 
 
 def display_str(variable, target):
-    Element(target).element.innerHTML =''
+    pydom[target].html =''
     var = (f"{variable} ml")
     display (var, target = target)
 
