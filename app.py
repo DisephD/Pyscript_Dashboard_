@@ -4,7 +4,7 @@ import numpy as np
 import plotly.express as px
 import plotly.graph_objects as go
 from pyodide.http import open_url
-from pyscript import display
+from pyscript import display, Element
 import warnings
 warnings.filterwarnings("ignore")
 
