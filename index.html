@@ -8,7 +8,7 @@
     <!-- pyscript css -->
     <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
     <!-- pyscript js -->
-    <script type="module" src="https://pyscript.net/2024.5.2/core.js"></script>
+    <script defer src="https://pyscript.net/latest/pyscript.js"></script>
     <!-- Plotly cdn -->
     <script src='https://cdn.plot.ly/plotly-latest.min.js'></script>
     <!-- Boxicons -->
@@ -21,8 +21,7 @@
     <title>Water Dashboard with PyScript</title>
 
     <py-config>
-        "packages" : ["plotly", "pandas"]
-        "interpreter": "0.21.3"
+        packages = ["plotly", "pandas"]
     </py-config>
 </head>
 
@@ -86,7 +85,7 @@
         <div class="title">
             <div class="filters">
                 <label for="filter">Filter by</label>
-                <select class="filter" id ="dropdown_menu" py-change="dropdown_event">
+                <select class="filter" id ="dropdown_menu" py-change="dropdown_event()">
                     <option value="January">January</option>
                     <option value="February">February</option>
                     <option value="March">March</option>
@@ -96,7 +95,7 @@
             <div class = "download">
                 <a href="#" class="download_button">
                     <i class='bx bx-cloud-download'></i>
-                    <button id="download" type="button" py-click="download_file">Download CSV</button>
+                    <button id="download" type="button" py-click="download_file()">Download CSV</button>
                 </a>
             </div>
         </div>
