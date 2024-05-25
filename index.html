@@ -8,7 +8,7 @@
     <!-- pyscript css -->
     <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
     <!-- pyscript js -->
-    <script type="module" src="https://pyscript.net/2024.1.1/core.js"></script>
+    <script type="module" src="https://pyscript.net/2024.5.2/core.js"></script>
     <!-- Plotly cdn -->
     <script src='https://cdn.plot.ly/plotly-latest.min.js'></script>
     <!-- Boxicons -->
@@ -21,7 +21,8 @@
     <title>Water Dashboard with PyScript</title>
 
     <py-config>
-        packages = ["plotly", "pandas"]
+        "packages" : ["plotly", "pandas"]
+        "interpreter": "0.23.4"
     </py-config>
 </head>
 
