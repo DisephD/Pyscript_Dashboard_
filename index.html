@@ -11,17 +11,17 @@
     <script type="module" src="https://pyscript.net/releases/2024.5.2/core.js"></script>
     <!-- Plotly cdn -->
     <script src='https://cdn.plot.ly/plotly-latest.min.js'></script>
-    <!-- My CSS -->
-<link rel="stylesheet" href="styles.css">
-<!--link to google material design font-->
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
-<!-- Boxicons -->
-<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
-
+    <!-- Boxicons -->
+	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <!--link to google material design font-->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+	<!-- My CSS -->
+	<link rel="stylesheet" href="styles.css">
+	
     <title>Water Dashboard with PyScript</title>
 
     <py-config>
-        packages = ["plotly", "pandas", "numpy"]
+        packages = ["plotly", "pandas"]
     </py-config>
 </head>
 
@@ -71,6 +71,7 @@
                         </a>
                     </li>
                 </ul>
+
                 <div class="heat_graph" id="heat_graph">
                     <div id="heatmap"></div>
                 </div>
@@ -79,42 +80,49 @@
     </section>
 
     <!------CENTER---->
-    <section class="dashboard">
-
+    <section class="middle_section">
         <!-- HEADER -->
         <div class="title">
             <div class="filters">
                 <label for="filter">Filter by</label>
-                <select class="filter" id ="selected_month" py-change="dropdown_event">
+                <select class="filter" id ="dropdown_menu" py-change="dropdown_event">
                     <option value="January">January</option>
                     <option value="February">February</option>
                     <option value="March">March</option>
                 </select>
             </div>
-        </div>
-       
 
+            <div class = "download">
+                <a href="#" class="download_button">
+                    <i class='bx bx-cloud-download'></i>
+                    <button id="download" type="button" py-click="download_file">Download CSV</button>
+                </a>
+            </div>
+        </div>
+
+    
+       
         <div class = "center-top">
          <!--KPI section -->
             <div id="kpis" class = "kpis">
-                <ul class="box-info">
+                <ul class="metric-card">
                     <li>
                         <span class="material-symbols-outlined">
                             water_drop
                         </span>
                         <span class="text">
                             <p class="box-text">Total Intake</p>
-                            <h3 id="total_water" class="box-text"></h3>
+                            <h3 id="total_water" class="box-text"></h3> 
                         </span>
                     </li>
-               
+                
                     <li>
                         <span class="material-symbols-outlined">
                             water_full
                         </span>
                         <span class="text">
                             <p class="box-text">Max Intake</p>
-                            <h3 class="box-text" id="highest_water"></h3>    
+                            <h3 class="box-text" id="highest_water"></h3>     
                         </span>
                     </li>
 
@@ -144,6 +152,7 @@
                 <div id="table">
                 </div>
             </div>
+           
         </div>
     </section>
 
@@ -155,23 +164,8 @@
 
             <div id="inner_right" class="inner_right">
 
-                <!-- CIRCLE CHART -->
-                <div id="circle_and_card">
-                    <div id="circle_graph" class="circle_graph">
-                        <div id="circle_chart">
-                        </div>
-                    </div>
-
-                    <!--target card to be displayed for small screens -->
-                    <div id="target_card">
-                        <div id="target_daily" class="target_card">
-                            <h3 class="text">2000ml</h3>    
-                            <p class="text">Daily Goal</p>    
-                        </div>
-                        <div id="target_weekly" class="target_card">
-                            <h3 class="text">14000ml</h3>
-                            <p class="text">Weekly Goal</p>      
-                        </div>
+                <div id="circle_graph" class="circle_graph">
+                    <div id="circle_chart">
                     </div>
                 </div>
 
@@ -184,7 +178,7 @@
                         <div class="category"></div>
                         <p>Weekly Target: 14000ml</p>
                     </div>
-                   
+                    
                     <!--bar chart -->
                     <div id="bar_graph" class="bar_graph">
                         <div id="bar_chart">
@@ -195,8 +189,8 @@
         </div>
     </section>
    
-    <py-script output="dashboard" src="./app.py">
-</py-script>
+    <py-script output="middle_section" src="./app.py">
+	</py-script>
 
 </body>
 </html>
