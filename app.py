@@ -198,5 +198,9 @@ def download_file(*args):
         hidden_link.setAttribute("download", "waterdata.csv")
         hidden_link.setAttribute("href", url)
         hidden_link.click()
-
-plot_charts("January")
+      
+heat_chart (water_data)
+line_chart (water_data)
+table_chart (water_data)
+circle_chart (water_data)
+bar_chart (water_data)
