@@ -26,7 +26,7 @@ def plotly_to_json (fig, target_id):
 
 def display_stats(variable, target):
 
-    document.getElementById(target).innerHTML =''
+    # document.getElementById(target).innerHTML =''
     var = (f"{variable} ml")
     display (var, target = target)
 
