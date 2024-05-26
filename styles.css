@@ -47,7 +47,7 @@ body {
 /*=================SIDEBAR========================== */
 .sidebar {
 	display: none
-    position: fixed;
+    /*position: fixed;
     padding: 10px;
 	margin-top: 27px;
 	margin-left: 10px;
@@ -58,7 +58,7 @@ body {
 	font-family: var(--lato);
 	overflow-x: hidden;  
 	overflow-y: hidden;
-	border-radius: 0 30px 30px 0;
+	border-radius: 0 30px 30px 0;*/
 }
 
 .sidebar .brand {
