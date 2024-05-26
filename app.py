@@ -26,7 +26,7 @@ def plotly_to_json (fig, target_id):
 
 def display_stats(variable, target):
 
-    document.getElementById(target).innerHTML =''
+    # document.getElementById(target).innerHTML =''
     var = (f"{variable} ml")
     display (var, target = target)
 
@@ -199,8 +199,4 @@ def download_file(*args):
         hidden_link.setAttribute("href", url)
         hidden_link.click()
       
-heat_chart (water_data)
-line_chart (water_data)
-table_chart (water_data)
-circle_chart (water_data)
-bar_chart (water_data)
+plot("March")
